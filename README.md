@@ -72,7 +72,7 @@ Once the integration is saved, the Adobe I/O Console generates several pieces of
 
 ### <a name="Sign">Signing In</a>
 
-The sign in process begins when you click the login button in your client browser app. This calls an endpoint on the client server app that redirects to the IMS authorization endpoint. This notifies Adobe IMS to start the sign-in process. It is recommended that your app proxies communication with IMS, so that your front end does not expose any secure information.
+The sign in process begins when you click the login button in your client browser app. This calls an endpoint on the client server app that redirects to the IMS authorization endpoint. This notifies Adobe IMS to start the sign-in process. It is best if your app proxies the communication with IMS so that your front end does not expose any secure information.
 
 ### IMS URL Endpoint for Authorization
 
