@@ -143,7 +143,7 @@ Host: localhost:8443
 
 `https://ims-na1.adobelogin.com/ims/token`
 
-#### Parameters 
+### Parameters 
 
 | Parameter name | Description |
 |----------------|-------------|
@@ -154,9 +154,11 @@ Host: localhost:8443
 
 
 
-Example Request
-Send IMS POST Access Token Request
+### Sample Requests and Responses
 
+**Request: Send IMS POST Access Token**
+
+```
 POST /ims/token HTTP/1.1 
 Host: ims-na1.adobelogin.com 
 Content-Type: application/x-www-form-urlencoded 
@@ -164,10 +166,11 @@ grant_type=authorization_code
 &client_id=3a67c... 
 &client_secret=12e7... 
 &code=eyJ4NXU...vkCnh9Q 
+```
 
-Example Response
-IMS Responds with Access Tokens, Refresh Tokens, and User Profile
+**Response: IMS Retruns Access Tokens, Refresh Tokens, and User Profile**
 
+```
 HTTP/1.1 200 OK 
 Content-Type: application/json;charset=UTF-8 
 { 
@@ -185,7 +188,9 @@ Content-Type: application/json;charset=UTF-8
 "family_name": "Atomic", 
 "email": "adam@atomcaps.com" 
 } 
+```
 When the user is signed in, the server app notifies the front-end to show the signed-in state. From here, the app includes the access token with every API request made by the user. 
+
 For example, the Member/Profile Adobe Stock request requires an access token (passed in the Authorization “Bearer” header). 
 
 Example Request
