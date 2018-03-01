@@ -51,19 +51,19 @@ To use the Adobe I/O Console:
 
 1. On the Integration Details screen, provide the following: 
   
-  1. The **Name** of your application. This is not sent in your API requests, but it is good practice to use a web-friendly name suitable for later use in the X-product header.
+      1. The **Name** of your application. This is not sent in your API requests, but it is good practice to use a web-friendly name suitable for later use in the X-product header.
   
-  1. A **Description** of your integration, such as *Integration of Stock API with *MyWebsite.com.*
+      1. A **Description** of your integration, such as *Integration of Stock API with *MyWebsite.com.*
     
-  1. **Platform**: Choose **iOS**, **Android**, or **Web**.
+     1. **Platform**: Choose **iOS**, **Android**, or **Web**.
 
-  1. A **Default redirect URI**: Provide the URL of the page or script (usually at the root of your web app) that Adobe will access during the authentication process. It must be hosted on a secure (HTTPS) server, even if it is only a localhost instance.
+      1. A **Default redirect URI**: Provide the URL of the page or script (usually at the root of your web app) that Adobe will access during the authentication process. It must be hosted on a secure (HTTPS) server, even if it is only a localhost instance.
 
-  *Note:  If you do not have this address yet, you can use any URL (e.g., `https://mysite.com/redirect.html`). Later, you will need to change it for your application to work.*
+      *Note:  If you do not have this address yet, you can use any URL (e.g., `https://mysite.com/redirect.html`). Later, you will need to change it for your application to work.*
   
-  10. A **Redirect URI pattern**: This is a URI path (or comma-separated list of paths) to which Adobe will attempt to redirect when the login flow is complete. It must be within your application domain, and is typically the root. You must escape periods (`.`) with `\\`, such as: `https://mysite\\.com/`.
+     1. A **Redirect URI pattern**: This is a URI path (or comma-separated list of paths) to which Adobe will attempt to redirect when the login flow is complete. It must be within your application domain, and is typically the root. You must escape periods (`.`) with `\\`, such as: `https://mysite\\.com/`.
 
-     ![integration details](https://user-images.githubusercontent.com/29133525/36869926-9b3cc0b0-1d5a-11e8-8a47-1ca5326f92d8.png)
+    ![integration details](https://user-images.githubusercontent.com/29133525/36869926-9b3cc0b0-1d5a-11e8-8a47-1ca5326f92d8.png)
 
 
 Once the integration is saved, the Adobe I/O Console generates several pieces of information you will need later. Copy everything in the **Client Credentials** section (including the **Client Secret**) and safeguard it like your private key in a secure location. 
