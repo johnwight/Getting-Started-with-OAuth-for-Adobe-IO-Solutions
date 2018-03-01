@@ -102,11 +102,11 @@ The sign in process begins when you click the login button in your client browse
 ##### Parameters
 
 
-!**Parameter name**! **Description**
-!`client_id`! API key obtained from Adobe I/O!
-!`scope`!**openid**,**creative_sdk**!
-!`redirect_uri`! Path that matches the redirect in the Adobe I/O integration !
-!`response_type`! **code**!
+|**Parameter name**| **Description**|
+|`client_id`| API key obtained from Adobe I/O|
+|`scope`|**openid**,**creative_sdk**|
+|`redirect_uri`| Path that matches the redirect in the Adobe I/O integration|
+|`response_type`| **code**|
 
 ##### Sample Requests and Responses
 
