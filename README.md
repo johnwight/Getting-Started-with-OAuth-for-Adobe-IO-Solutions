@@ -94,22 +94,20 @@ To use the Adobe I/O Console:
 
 The sign in process begins when you click the login button in your client browser app. This calls an endpoint on the client server app that redirects to the IMS authorization endpoint. This notifies Adobe IMS to start the sign-in process. It is recommended that your app proxies communication with IMS, so that your front end does not expose any secure information.
 
-#### IMS URL Endpoint for Authorization
+### IMS URL Endpoint for Authorization
 
 `https://ims-na1.adobelogin.com/ims/authorize `
 
-##### Parameters
-
-
+### Parameters
 
 | Parameter name | Description |
 |----------------|-------------|
 |`client_id`| API key obtained from Adobe I/O|
-|`scope`|**openid**,**creative_sdk**|
+|`scope`|**openid**, **creative_sdk**|
 |`redirect_uri`| Path that matches the redirect in the Adobe I/O integration|
 |`response_type`| **code**|
 
-##### Sample Requests and Responses
+#### Sample Requests and Responses
 
 **Sample Request**
 *Server script redirecting to IMS authorization endpoint*
