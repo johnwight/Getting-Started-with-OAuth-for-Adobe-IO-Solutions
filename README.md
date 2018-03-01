@@ -5,19 +5,19 @@ These instructions provide the OAuth steps for obtaining credentials on the [Ado
 
 These instructions include the following sections:
 
-Basics of OAuth Authentication
+1. [Basics of OAuth Authentication](#Basics)
 
-Setting Up the Environment
+1. [Setting Up the Environment](#Enviro)
 
-Obtaining Credentials on the Console
+1. [Obtaining Credentials on the Console](#Console)
 
-Obtaining Credentials with OAuth Code
+1. [Obtaining Credentials with OAuth Code](#Code)
 
-  Signing In
+  [Signing In](#Sign)
     
-  Renewing Your Login
+  [Renewing Your Login](#Renew)
     
-  Signing Out
+  [Signing Out](#Out)
  
    
 ## Basics of OAuth Authentication
