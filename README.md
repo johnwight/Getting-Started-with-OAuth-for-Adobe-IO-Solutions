@@ -38,7 +38,7 @@ To use the Adobe I/O Console:
 
 1.	Select **Access an API** and then click **Continue**.
 
-     ![access an api](https://user-images.githubusercontent.com/29133525/36869510-44f57c20-1d59-11e8-9d1f-a30c126c8184.png)
+     ![access an api](https://user-images.githubusercontent.com/29133525/36869600-9ae7dcfe-1d59-11e8-8fe9-cfb79c7951f2.png)
 
 1.	Select the Adobe product or service you want to use with Adobe I/O and then click **Continue**.
  
