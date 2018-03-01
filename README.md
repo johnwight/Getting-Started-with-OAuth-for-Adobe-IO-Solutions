@@ -42,6 +42,7 @@ To use the Adobe I/O Console:
 
 1.	Select the Adobe product or service you want to use with Adobe I/O and then click **Continue**.
  
+     ![adobe products](https://user-images.githubusercontent.com/29133525/36869666-cc854bd4-1d59-11e8-96ae-c614227a1ff0.png)
 
 1.	Click **New Integration** and then click **Continue**.
 
@@ -267,4 +268,14 @@ HTTP/1.1 302 Found
 Content-Type: text/html;charset=UTF-8 
 Location: https://localhost:8443/auth/token
 ```
+
+## Author
+- John Wight [@johnwight](https://github.com/johnwight).
+
+
+## Feedback?
+
+Please help make this solution as useful as possible. If you find a problem in the documentation or have a suggestion, click the **Issues** tab on this GiHhub repository and then click the **New issue** button. Provide a title and description for your comment and then click the **Submit new issue** button.
+
+   ![submit new issue](https://user-images.githubusercontent.com/29133525/32515298-f344bd5a-c3bc-11e7-9978-34516f964f9f.png)
 
