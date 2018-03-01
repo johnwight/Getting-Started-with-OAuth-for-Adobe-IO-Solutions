@@ -1,5 +1,5 @@
 # Getting-Started-with-OAuth-for-Adobe-IO-Solutions
-Get OAuth Credentials for Adobe I/O Solutions
+*Get OAuth Credentials for Adobe I/O Solutions.*
 
 These instructions provide the OAuth steps for obtaining credentials on the [Adobe I/O Console](https://console.adobe.io) or by using code to make API calls to Adobe Identity Management System (IMS) endpoints.
 
@@ -16,19 +16,18 @@ These instructions include the following sections:
       * [Signing In](#Sign)
       * [Renewing Your Login](#Renew)
       * [Signing Out](#Out)
- 
-## Basics of OAuth Authentication
+
+## <a name="Basics">Basics of OAuth Authentication</a>
 
 OAuth allows end-users to sign in directly to the service they want to use from within the convenience of an intermediate application. The app acts between the user and the web service, but does not handle usernames and passwords. Instead, it is a web service that redirects the user to the website for login, and then provides a token to the application, allowing it to speak on behalf of the user.
 
-## Setting Up the Environment
+## <a name="Enviro">Setting Up the Environment</a>
 
 To test and integrate with the auth code method, you must create a secure (HTTPS) server. This is required by the auth code method, which redirects traffic from Adobe’s sign in page back to your server, but only if your page is hosted in a secure location. Also, if you prefer not to use front-end Ajax to communicate with the Adobe APIs, you will need server support to handle these requests. 
 
 For basic testing, a simple option is to use Node.js or Python; otherwise, Apache provides a robust set of tools for web hosting. In each case, you will need to generate or purchase a public key certificate to complete the setup. 
 
-
-## Obtaining Credentials on the Console
+## <a name="Console">Obtaining Credentials on the Console</a>
 
 To access Adobe APIs, create an application key on the [Adobe I/O Console](https://console.adobe.io). Adobe I/O whitelists these keys and permits your application to access the APIs. It also issues and validates OAuth claims. 
 
@@ -61,10 +60,9 @@ To use the Adobe I/O Console:
 
  Once the integration is saved, the Adobe I/O Console generates several pieces of information you will need later. Copy everything in the **Client Credentials** section (including the **Client Secret**) and safeguard it like your private key in a secure location. 
 
+## <a name="Code">Obtaining Credentials with OAuth Code</a>
 
-## Obtaining Credentials with OAuth Code
-
-### Signing In
+### <a name="Sign">Signing In</a>
 
 The sign in process begins when you click the login button in your client browser app. This calls an endpoint on the client server app that redirects to the IMS authorization endpoint. This notifies Adobe IMS to start the sign-in process. It is recommended that your app proxies communication with IMS, so that your front end does not expose any secure information.
 
@@ -193,8 +191,7 @@ x-api-key: 3a67c...
 } 
 ```
 
-
-### Renewing Your Login
+### <a name="Renew">Renewing Your Login</a>
 
 The auth code workflow includes a refresh token to renew your access periodically without needing to sign-in again. While the access token is designed to expire over a short amount of time (the default is 24 hours), the refresh token lasts for up to two weeks, by default. You can then request Adobe IMS to issue a new access token with a single API call automatically. 
 To request a refresh token, you can use a similar process as requesting the original access token, except to change the value of the grant_type parameter and to replace code with a refresh_token parameter:
@@ -227,7 +224,7 @@ grant_type=refresh_token
 &refresh_token=eyJ4NXU... Ps1hKQug
 ```
 
-### Signing Out 
+### <a name="Out">Signing Out</a>
 
 When a  user logs out of your app, the front-end redirects to a logout endpoint on your server app. This then calls the logout endpoint on IMS. Similar to the sign-in process, the best practice is to let the server app call IMS, since the access token must be passed as part of the request. 
 
