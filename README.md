@@ -166,7 +166,7 @@ Content-Type: application/json;charset=UTF-8
 "email": "adam@atomcaps.com" 
 } 
 ```
-* When the user is signed in, the server app notifies the front-end to show the signed-in state. From here, the app includes the access token with every API request made by the user. For example, the Member/Profile Adobe Stock request requires this access token, which is passed in the `Authorization: Bearer`. 
+When the user is signed in, the server app notifies the front-end to show the signed-in state. From here, the app includes the access token with every API request made by the user. For example, the Member/Profile Adobe Stock request requires this access token, which is passed in the `Authorization: Bearer` header. 
 
 **Request: Send Authenticated Member/Profile Request to Stock API**
 
