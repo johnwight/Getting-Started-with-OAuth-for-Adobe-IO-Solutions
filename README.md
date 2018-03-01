@@ -107,10 +107,9 @@ The sign in process begins when you click the login button in your client browse
 |`redirect_uri`| Path that matches the redirect in the Adobe I/O integration|
 |`response_type`| **code**|
 
-#### Sample Requests and Responses
+### Sample Requests
 
-**Sample Request**
-*Server script redirecting to IMS authorization endpoint*
+**Server script redirecting to IMS authorization endpoint***
 
 ```
 GET /auth/signin HTTP/1.1 
@@ -124,21 +123,21 @@ Location: https://ims-na1.adobelogin.com/ims/authorize
 &response_type=code 
 ```
 
-* Adobe IMS redirects to the Adobe sign-in page, called “SUSI” (“Sign Up/Sign In”). Depending on the user’s email address, authentication is handled either by Adobe’s identity provider, or the Enterprise identity provider of the user’s parent organization. If the user has not granted permission, IMS first requests permission to allow the application to access the user’s information. The requesting app is the same one previously specified in the Adobe I/O Console. 
- 	 
+**IMS redirecting back to application**
 
-Upon successful sign-in, Adobe IMS redirects the browser back to the client redirect URI with an authorization code in the query string. 
-
-The redirect location works best if it is a server script and not a web page, since this code is part of the authentication sequence and should be kept secure. 
-
-**Sample Request**
-*IMS redirecting back to application
-
+```
 GET /auth/token?code=eyJ4NXU...vkCnh9Q 
 HTTP/1.1 
 Host: localhost:8443
+```
 
-Once the auth code is received, the server app sends a separate POST request to IMS, providing the API key, auth code and client secret (obtained earlier from Adobe I/O). The response includes an access token, a refresh token, and the user profile--as the workflow involves immediately getting the user profile once the user is signed in. 
+* Adobe IMS redirects to the Adobe sign-in page, called “SUSI” (“Sign Up/Sign In”). Depending on the user’s email address, authentication is handled either by Adobe’s identity provider, or the Enterprise identity provider of the user’s parent organization. If the user has not granted permission, IMS first requests permission to allow the application to access the user’s information. The requesting app is the same one previously specified in the Adobe I/O Console. 
+ 	 
+* Upon successful sign-in, Adobe IMS redirects the browser back to the client redirect URI with an authorization code in the query string. 
+
+* The redirect location works best if it is a server script and not a web page, since this code is part of the authentication sequence and should be kept secure. 
+
+* Once the auth code is received, the server app sends a separate POST request to IMS, providing the API key, auth code and client secret (obtained earlier from Adobe I/O). The response includes an access token, a refresh token, and the user profile--as the workflow involves immediately getting the user profile once the user is signed in. 
  
 #### IMS URL Endpoint for Token Bearing
 
