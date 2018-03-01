@@ -11,9 +11,7 @@ Setting Up the Environment
 
 Obtaining Credentials on the Console
 
-Understanding the OAuth Code Client-server Process
-
-Using OAuth Code
+Obtaining Credentials with OAuth Code
 
   Signing in
   
@@ -21,13 +19,13 @@ Using OAuth Code
     
    Parameters
     
-   Authorization Example
+   Sample Requests and Responses
     
    IMS URL Endpoint for Token Bearing
     
    Parameters
     
-   Token Bearing Example
+   Sample Requests and Responses
     
   Renewing Your Login
   
@@ -35,7 +33,7 @@ Using OAuth Code
     
    Parameters
     
-   Refresh Example
+   Sample Requests and Responses
     
  Signing Out
  
@@ -43,7 +41,7 @@ Using OAuth Code
     
    Parameters
     
-   Sign Out Example
+   Sample Requests and Responses
 
 ## Basics of OAuth authentication
 
@@ -88,25 +86,34 @@ To use the Adobe I/O Console:
   
   10.	A **Redirect URI pattern**: This is a URI path (or comma-separated list of paths) to which Adobe will attempt to redirect when the login flow is complete. It must be within your application domain, and is typically the root. You must escape periods (`.`) with `\\`, such as: `https://mysite\\.com/`.
 
- 
+ Once the integration is saved, the Adobe I/O Console generates several pieces of information you will need later. Copy everything in the **Client Credentials** section (including the **Client Secret**) and safeguard it like your private key in a secure location. 
 
-Once the integration is saved, the Adobe I/O Console generates several pieces of information you will need later. Copy everything in the Client Credentials section (including the Client Secret) and safeguard it like your private key in a secure location. 
-For more information: OAuth code client-server process
-Before you start creating your application to integrate with Adobe I/O, it is important to understand how your client-side app interacts with your server-side app, and how it in turn communicates with Adobe IMS and Adobe I/O. 
-Signing in 
-The sign in process begins when you click the login button in your client browser app. This calls an endpoint on the client server app that redirects to the IMS authorization endpoint. This notifies Adobe IMS to start the sign-in process. It is recommended that your app proxies communication with IMS, so that your front end does not expose any secure information. 
-IMS URL Endpoint
-https://ims-na1.adobelogin.com/ims/authorize 
-Parameters 
-Parameter name	Description
-client_id	API key obtained from Adobe I/O
-scope	openid,creative_sdk
-redirect_uri	Path that matches the redirect in the Adobe I/O integration 
-response_type	code
 
-Example Request
-Server script redirecting to IMS authorization endpoint
+## Obtaining Credentials with OAuth Code
 
+### Signing in
+
+The sign in process begins when you click the login button in your client browser app. This calls an endpoint on the client server app that redirects to the IMS authorization endpoint. This notifies Adobe IMS to start the sign-in process. It is recommended that your app proxies communication with IMS, so that your front end does not expose any secure information.
+
+#### IMS URL Endpoint for Authorization
+
+`https://ims-na1.adobelogin.com/ims/authorize `
+
+##### Parameters
+
+
+!**Parameter name**! **Description**
+!`client_id`! API key obtained from Adobe I/O!
+!`scope`!**openid**,**creative_sdk**!
+!`redirect_uri`! Path that matches the redirect in the Adobe I/O integration !
+!`response_type`! **code**!
+
+##### Sample Requests and Responses
+
+**Sample Request**
+*Server script redirecting to IMS authorization endpoint*
+
+```
 GET /auth/signin HTTP/1.1 
 Host: localhost:8443
 
@@ -116,16 +123,17 @@ Location: https://ims-na1.adobelogin.com/ims/authorize
 &redirect_uri=https://localhost:8443/auth/token 
 &scope=openid,creative_sdk 
 &response_type=code 
+```
 
-●	Adobe IMS redirects to the Adobe sign-in page, called “SUSI” (“Sign Up/Sign In”). Depending on the user’s email address, authentication is handled either by Adobe’s identity provider, or the Enterprise identity provider of the user’s parent organization. If the user has not granted permission, IMS first requests permission to allow the application to access the user’s information. The requesting app is the same one previously specified in the Adobe I/O Console. 
+* Adobe IMS redirects to the Adobe sign-in page, called “SUSI” (“Sign Up/Sign In”). Depending on the user’s email address, authentication is handled either by Adobe’s identity provider, or the Enterprise identity provider of the user’s parent organization. If the user has not granted permission, IMS first requests permission to allow the application to access the user’s information. The requesting app is the same one previously specified in the Adobe I/O Console. 
  	 
 
-●	Upon successful sign-in, Adobe IMS redirects the browser back to the client redirect URI with an authorization code in the query string. 
+Upon successful sign-in, Adobe IMS redirects the browser back to the client redirect URI with an authorization code in the query string. 
 
-●	It is recommended that the redirect location be a server script and not a web page, since this code is part of the authentication sequence and should be kept secure. 
+The redirect location works best if it is a server script and not a web page, since this code is part of the authentication sequence and should be kept secure. 
 
-Example Request
-IMS redirecting back to application
+**Sample Request**
+*IMS redirecting back to application
 
 GET /auth/token?code=eyJ4NXU...vkCnh9Q 
 HTTP/1.1 
@@ -133,9 +141,12 @@ Host: localhost:8443
 
 Once the auth code is received, the server app sends a separate POST request to IMS, providing the API key, auth code and client secret (obtained earlier from Adobe I/O). The response includes an access token, a refresh token, and the user profile--as the workflow involves immediately getting the user profile once the user is signed in. 
  
-IMS URL Endpoint
-https://ims-na1.adobelogin.com/ims/token
-Parameters 
+#### IMS URL Endpoint for Token Bearing
+
+`https://ims-na1.adobelogin.com/ims/token`
+
+##### Parameters 
+
 Parameter name	Description
 grant_type	authorization_code 
 client_id	API key obtained from Adobe I/O
