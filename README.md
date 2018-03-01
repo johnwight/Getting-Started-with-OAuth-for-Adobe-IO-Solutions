@@ -65,7 +65,6 @@ To use the Adobe I/O Console:
 
 1.	Select **Access an API** and then click **Continue**.
 
- 
 
 1.	Select the Adobe product or service you want to use with Adobe I/O and then click **Continue**.
  
@@ -103,7 +102,8 @@ The sign in process begins when you click the login button in your client browse
 
 
 
-| **Parameter name** | **Description** |
+| Parameter name | Description |
+|----------------|-------------|
 |`client_id`| API key obtained from Adobe I/O|
 |`scope`|**openid**,**creative_sdk**|
 |`redirect_uri`| Path that matches the redirect in the Adobe I/O integration|
