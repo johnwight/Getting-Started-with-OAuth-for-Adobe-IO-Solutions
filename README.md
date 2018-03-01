@@ -111,7 +111,10 @@ HTTP/1.1
 Host: localhost:8443
 ```
 
-* Adobe IMS redirects to the Adobe sign-in page, called “SUSI” (“Sign Up/Sign In”). Depending on the user’s email address, authentication is handled either by Adobe’s identity provider, or the Enterprise identity provider of the user’s parent organization. If the user has not granted permission, IMS first requests permission to allow the application to access the user’s information. The requesting app is the same one previously specified in the Adobe I/O Console. 
+* Adobe IMS redirects to the Adobe Sign-in page, called “SUSI” (“Sign Up/Sign In”). Depending on the user’s email address, authentication is handled either by Adobe’s identity provider, or the Enterprise identity provider of the user’s parent organization. If the user has not granted permission, IMS first requests permission to allow the application to access the user’s information. The requesting app is the same one previously specified in the Adobe I/O Console. 
+
+     ![sign in extra](https://user-images.githubusercontent.com/29133525/36870270-c056b9a4-1d5b-11e8-99a0-b9284a0c9edc.png)
+
  	 
 * Upon successful sign-in, Adobe IMS redirects the browser back to the client redirect URI with an authorization code in the query string. 
 
