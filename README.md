@@ -107,9 +107,9 @@ The sign in process begins when you click the login button in your client browse
 |`redirect_uri`| Path that matches the redirect in the Adobe I/O integration|
 |`response_type`| **code**|
 
-### Sample Requests
+### Sample Requests and Responses
 
-**Server script redirecting to IMS authorization endpoint**
+**Request: Server script redirecting to IMS authorization endpoint**
 
 ```
 GET /auth/signin HTTP/1.1 
@@ -123,7 +123,7 @@ Location: https://ims-na1.adobelogin.com/ims/authorize
 &response_type=code 
 ```
 
-**IMS redirecting back to application**
+**Request: IMS redirecting back to application**
 
 ```
 GET /auth/token?code=eyJ4NXU...vkCnh9Q 
@@ -147,10 +147,11 @@ Host: localhost:8443
 
 | Parameter name | Description |
 |----------------|-------------|
+| `grant_type` | **authorization_code** |
 |`client_id`| API key obtained from Adobe I/O|
 |`redirect_uri`| Path that matches the redirect in the Adobe I/O integration|
 |`code`| Code sent by IMS to client redirect URI |
-|`response_type`| **code**|
+
 
 
 Example Request
