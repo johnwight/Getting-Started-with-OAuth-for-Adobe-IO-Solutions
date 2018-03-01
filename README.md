@@ -49,7 +49,7 @@ To use the Adobe I/O Console:
      ![new integration](https://user-images.githubusercontent.com/29133525/36869856-6f9eadba-1d5a-11e8-924a-afe32ce6f901.png)
 
 
-1. On the Integration Details screen, provide the following: 
+1. For **Integration Details**, provide the following: 
   
       1. The **Name** of your application. This is not sent in your API requests, but it is good practice to use a web-friendly name suitable for later use in the X-product header.
   
