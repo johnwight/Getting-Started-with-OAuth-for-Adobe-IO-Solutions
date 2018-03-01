@@ -13,36 +13,13 @@ Obtaining Credentials on the Console
 
 Obtaining Credentials with OAuth Code
 
-  Signing in
-  
-   IMS URL Endpoint for Signing in
-    
-   Parameters
-    
-   Sample Requests and Responses
-    
-   IMS URL Endpoint for Token Bearing
-    
-   Parameters
-    
-   Sample Requests and Responses
+  Signing In
     
   Renewing Your Login
-  
-   IMS URL Endpoint for Refresh Tokens
     
-   Parameters
-    
-   Sample Requests and Responses
-    
- Signing Out
+  Signing Out
  
-   IMS URL Endpoint for Signing Out
-    
-   Parameters
-    
-   Sample Requests and Responses
-
+   
 ## Basics of OAuth Authentication
 
 OAuth allows end-users to sign in directly to the service they want to use from within the convenience of an intermediate application. The app acts between the user and the web service, but does not handle usernames and passwords. Instead, it is a web service that redirects the user to the website for login, and then provides a token to the application, allowing it to speak on behalf of the user.
@@ -281,7 +258,7 @@ Location: https://ims-na1.adobelogin.com/ims/logout
 
 When the process is finished on the Adobe IMS side, IMS redirects the browser to the redirect URI. Your app can then notify the front end so that the UI is updated to show the signed-out state.
 
-**Response: Logout from IMS **
+**Response: Logout from IMS**
 
 ```
 Example Request
