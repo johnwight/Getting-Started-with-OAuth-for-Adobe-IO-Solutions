@@ -43,7 +43,7 @@ Obtaining Credentials with OAuth Code
     
    Sample Requests and Responses
 
-## Basics of OAuth authentication
+## Basics of OAuth Authentication
 
 OAuth allows end-users to sign in directly to the service they want to use from within the convenience of an intermediate application. The app acts between the user and the web service, but does not handle usernames and passwords. Instead, it is a web service that redirects the user to the website for login, and then provides a token to the application, allowing it to speak on behalf of the user.
 
