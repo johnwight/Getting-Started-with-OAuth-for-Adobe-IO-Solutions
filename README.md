@@ -266,9 +266,6 @@ When the process is finished on the Adobe IMS side, IMS redirects the browser to
 **Response: Logout from IMS**
 
 ```
-Example Request
-Logout Response to IMS
-
 GET /ims/logout_response 
 ?redirect_uri=https://localhost:8443/auth/token 
 &client_id=3a67c... HTTP/1.1 
