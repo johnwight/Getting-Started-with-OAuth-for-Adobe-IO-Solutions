@@ -23,7 +23,7 @@ OAuth allows end-users to sign in directly to the service they want to use from 
 
 ## <a name="Enviro">Setting Up the Environment</a>
 
-To test and integrate with the auth code method, you must create a secure (HTTPS) server. This is required by the auth code method, which redirects traffic from Adobe’s sign in page back to your server, but only if your page is hosted in a secure location. Also, if you prefer not to use front-end Ajax to communicate with the Adobe APIs, you will need server support to handle these requests. 
+To test and integrate with the auth code method, you must create a secure (HTTPS) server. The auth code method redirects traffic from Adobe’s Sign in page back to your page only if it is hosted in a secure location. Also, if you prefer not to use front-end Ajax to communicate with the Adobe APIs, you will need server support to handle these requests. 
 
 For basic testing, a simple option is to use Node.js or Python; otherwise, Apache provides a robust set of tools for web hosting. In each case, you will need to generate or purchase a public key certificate to complete the setup. 
 
