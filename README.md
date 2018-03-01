@@ -69,7 +69,7 @@ To use the Adobe I/O Console:
 
  
 
-3.	Select the Adobe product or service you want to use with Adobe I/O and then click Continue.
+3.	Select the Adobe product or service you want to use with Adobe I/O and then click **Continue**.
  
 
 4.	Click New Integration and then click Continue.
