@@ -90,7 +90,7 @@ To use the Adobe I/O Console:
 
 ## Obtaining Credentials with OAuth Code
 
-### Signing in
+### Signing In
 
 The sign in process begins when you click the login button in your client browser app. This calls an endpoint on the client server app that redirects to the IMS authorization endpoint. This notifies Adobe IMS to start the sign-in process. It is recommended that your app proxies communication with IMS, so that your front end does not expose any secure information.
 
@@ -150,7 +150,7 @@ Host: localhost:8443
 | `grant_type` | **authorization_code** |
 |`client_id`| API key obtained from Adobe I/O|
 |`redirect_uri`| Path that matches the redirect in the Adobe I/O integration|
-|`code`| Code sent by IMS to client redirect URI |
+|`code`| Code sent by IMS to client redirect URI|
 
 
 
@@ -225,53 +225,65 @@ x-api-key: 3a67c...
 The auth code workflow includes a refresh token to renew your access periodically without needing to sign-in again. While the access token is designed to expire over a short amount of time (the default is 24 hours), the refresh token lasts for up to two weeks, by default. You can then request Adobe IMS to issue a new access token with a single API call automatically. 
 To request a refresh token, you can use a similar process as requesting the original access token, except to change the value of the grant_type parameter and to replace code with a refresh_token parameter:
 
-#### IMS URL Endpoint for Renewing Login
+### IMS URL Endpoint for Renewing Login
 
 `https://ims-na1.adobelogin.com/ims/token`
 
-#### Parameters
+### Parameters
 
 | Parameter name | Description |
 |----------------|-------------|
 | `grant_type` | `refresh_token`|
 |`client_id`| API key obtained from Adobe I/O|
 |`redirect_uri`| Path that matches the redirect in the Adobe I/O integration|
-|`refresh_token`|	Original refresh token sent by IMS |
+|`refresh_token`|	Original refresh token sent by IMS|
 
-### Sample Requests and Responses
+### Sample Request
 
 
-Example Request
-Send IMS POST Refresh Token Request
+**Request: Send IMS POST Refresh Token Request**
 
+```
 POST /ims/token HTTP/1.1 
 Host: ims-na1.adobelogin.com 
 Content-Type: application/x-www-form-urlencoded 
 grant_type=refresh_token 
 &client_id=3a67c... 
 &client_secret=12e7... 
-&refresh_token=eyJ4NXU... Ps1hKQug 
-Signing out 
+&refresh_token=eyJ4NXU... Ps1hKQug
+```
 
-When a  user clicks the logout button on your app, the front-end redirects to a logout endpoint on your server app. This then calls the logout endpoint on IMS. Similar to the sign-in process, the best practice is to let the server app call IMS, since the access token must be passed as part of the request. 
-IMS URL Endpoint
-https://ims-na1.adobelogin.com/ims/logout
-Parameters 
-Parameter name	Description
-access_token	Last access token obtained from login
-redirect_uri	Path that matches the redirect in the Adobe I/O integration 
-Example Request
-Redirect to IMS Logout Endpoint
+### Signing Out 
 
+When a  user logs out of your app, the front-end redirects to a logout endpoint on your server app. This then calls the logout endpoint on IMS. Similar to the sign-in process, the best practice is to let the server app call IMS, since the access token must be passed as part of the request. 
+
+### IMS URL Endpoint for Signing Out
+
+`https://ims-na1.adobelogin.com/ims/logout`
+
+### Parameters
+
+| Parameter name | Description |
+|----------------|-------------|
+| `access_token` | Last access token obtained from login|
+|`redirect_uri`| Path that matches the redirect in the Adobe I/O integration|
+
+**Request: Redirect to IMS Logout Endpoint**
+
+```
 GET /auth/signout HTTP/1.1 
 Host: localhost:8443 
 HTTP/1.1 302 Found 
 Location: https://ims-na1.adobelogin.com/ims/logout 
 ?access_token=eyJ4NXU...qOk8-DA 
 &redirect_uri=https://localhost:8443/auth/token 
+```
 
-When the process is finished on the Adobe IMS side, IMS redirects the browser  to the redirect URI. Your app can then notify the front end so that the UI is updated to show the signed-out state. 
-Logout response from IMS 
+When the process is finished on the Adobe IMS side, IMS redirects the browser to the redirect URI. Your app can then notify the front end so that the UI is updated to show the signed-out state.
+
+**Response: Logout from IMS **
+
+```
 Example Request
 Logout Response to IMS
 
@@ -282,5 +294,5 @@ Host: ims-na1.adobelogin.com
 HTTP/1.1 302 Found 
 Content-Type: text/html;charset=UTF-8 
 Location: https://localhost:8443/auth/token
-
+```
 
