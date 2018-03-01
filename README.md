@@ -156,7 +156,7 @@ Host: localhost:8443
 
 ### Sample Requests and Responses
 
-**Request: Send IMS POST Access Token**
+**Request: Send IMS POST access token**
 
 ```
 POST /ims/token HTTP/1.1 
@@ -168,7 +168,7 @@ grant_type=authorization_code
 &code=eyJ4NXU...vkCnh9Q 
 ```
 
-**Response: IMS Retruns Access Tokens, Refresh Tokens, and User Profile**
+**Response: IMS retruns access tokens, refresh tokens, and user profile**
 
 ```
 HTTP/1.1 200 OK 
@@ -189,22 +189,20 @@ Content-Type: application/json;charset=UTF-8
 "email": "adam@atomcaps.com" 
 } 
 ```
-When the user is signed in, the server app notifies the front-end to show the signed-in state. From here, the app includes the access token with every API request made by the user. 
+* When the user is signed in, the server app notifies the front-end to show the signed-in state. From here, the app includes the access token with every API request made by the user. For example, the Member/Profile Adobe Stock request requires this access token, which is passed in the `Authorization: Bearer`. 
 
-For example, the Member/Profile Adobe Stock request requires an access token (passed in the Authorization “Bearer” header). 
-
-Example Request
-Send Authenticated Member/Profile Request to Stock API
+**Request: Send Authenticated Member/Profile Request to Stock API**
 
 
 GET /Rest/Libraries/1/Member/Profile?content_id=117487990& locale=en_US HTTP/1.1 
 Host: stock-stage.adobe.io 
 X-Product: IMSDemo 
 x-api-key: 3a67c... 
-Authorization: Bearer eyJ4NXU...qOk8-DA 
+**Authorization: Bearer eyJ4NXU...qOk8-DA**
 
-Example Response
-Member/Profile Response
+**Response: Member/Profile Data**
+
+```
 { 
 "available_entitlement": { 
 "quota": 85, 
@@ -218,6 +216,9 @@ Member/Profile Response
 } 
 }, ... 
 } 
+```
+
+
 Renewing your login 
 The auth code workflow includes a refresh token to renew your access periodically without needing to sign-in again. While the access token is designed to expire over a short amount of time (the default is 24 hours), the refresh token lasts for up to two weeks, by default. You can then ask Adobe IMS to issue a new access token with a single API call behind the scenes. 
 To request a refresh token, you can use a similar process as requesting the original access token, except to change the value of the grant_type parameter and to replace code with a refresh_token parameter:
