@@ -193,12 +193,13 @@ Content-Type: application/json;charset=UTF-8
 
 **Request: Send Authenticated Member/Profile Request to Stock API**
 
-
+```
 GET /Rest/Libraries/1/Member/Profile?content_id=117487990& locale=en_US HTTP/1.1 
 Host: stock-stage.adobe.io 
 X-Product: IMSDemo 
 x-api-key: 3a67c... 
 **Authorization: Bearer eyJ4NXU...qOk8-DA**
+```
 
 **Response: Member/Profile Data**
 
@@ -219,20 +220,27 @@ x-api-key: 3a67c...
 ```
 
 
-Renewing your login 
-The auth code workflow includes a refresh token to renew your access periodically without needing to sign-in again. While the access token is designed to expire over a short amount of time (the default is 24 hours), the refresh token lasts for up to two weeks, by default. You can then ask Adobe IMS to issue a new access token with a single API call behind the scenes. 
+### Renewing Your Login
+
+The auth code workflow includes a refresh token to renew your access periodically without needing to sign-in again. While the access token is designed to expire over a short amount of time (the default is 24 hours), the refresh token lasts for up to two weeks, by default. You can then request Adobe IMS to issue a new access token with a single API call automatically. 
 To request a refresh token, you can use a similar process as requesting the original access token, except to change the value of the grant_type parameter and to replace code with a refresh_token parameter:
 
-IMS URL Endpoint
-https://ims-na1.adobelogin.com/ims/token
-Parameters 
-Parameter name	Description
-grant_type	refresh_token 
-client_id	API key obtained from Adobe I/O
-redirect_uri	Path that matches the redirect in the Adobe I/O integration 
-refresh_token	Original refresh token sent by IMS
+#### IMS URL Endpoint for Renewing Login
 
-Send IMS POST refresh token request 
+`https://ims-na1.adobelogin.com/ims/token`
+
+#### Parameters
+
+| Parameter name | Description |
+|----------------|-------------|
+| `grant_type` | `refresh_token`|
+|`client_id`| API key obtained from Adobe I/O|
+|`redirect_uri`| Path that matches the redirect in the Adobe I/O integration|
+|`refresh_token`|	Original refresh token sent by IMS |
+
+### Sample Requests and Responses
+
+
 Example Request
 Send IMS POST Refresh Token Request
 
