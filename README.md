@@ -42,7 +42,7 @@ To use the Adobe I/O Console:
 
 1.	Select the Adobe product or service you want to use with Adobe I/O and then click **Continue**.
  
-     ![adobe products](https://user-images.githubusercontent.com/29133525/36869666-cc854bd4-1d59-11e8-96ae-c614227a1ff0.png)
+     ![adobe products](https://user-images.githubusercontent.com/29133525/36869786-33bde180-1d5a-11e8-841f-b8e004967fef.png)
 
 1.	Click **New Integration** and then click **Continue**.
 
