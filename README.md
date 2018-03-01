@@ -109,7 +109,7 @@ The sign in process begins when you click the login button in your client browse
 
 ### Sample Requests
 
-**Server script redirecting to IMS authorization endpoint***
+**Server script redirecting to IMS authorization endpoint**
 
 ```
 GET /auth/signin HTTP/1.1 
@@ -139,17 +139,19 @@ Host: localhost:8443
 
 * Once the auth code is received, the server app sends a separate POST request to IMS, providing the API key, auth code and client secret (obtained earlier from Adobe I/O). The response includes an access token, a refresh token, and the user profile--as the workflow involves immediately getting the user profile once the user is signed in. 
  
-#### IMS URL Endpoint for Token Bearing
+### IMS URL Endpoint for Token Bearing
 
 `https://ims-na1.adobelogin.com/ims/token`
 
-##### Parameters 
+#### Parameters 
 
-Parameter name	Description
-grant_type	authorization_code 
-client_id	API key obtained from Adobe I/O
-redirect_uri	Path that matches the redirect in the Adobe I/O integration 
-code	Code sent by IMS to client redirect URI
+| Parameter name | Description |
+|----------------|-------------|
+|`client_id`| API key obtained from Adobe I/O|
+|`redirect_uri`| Path that matches the redirect in the Adobe I/O integration|
+|`code`| Code sent by IMS to client redirect URI |
+|`response_type`| **code**|
+
 
 Example Request
 Send IMS POST Access Token Request
