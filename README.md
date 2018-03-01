@@ -13,11 +13,10 @@ These instructions include the following sections:
 
 1. [Obtaining Credentials with OAuth Code](#Code)
 
-      1. [Signing In](#Sign)
-      1. [Renewing Your Login](#Renew)
-      1. [Signing Out](#Out)
+      * [Signing In](#Sign)
+      * [Renewing Your Login](#Renew)
+      * [Signing Out](#Out)
  
-   
 ## Basics of OAuth Authentication
 
 OAuth allows end-users to sign in directly to the service they want to use from within the convenience of an intermediate application. The app acts between the user and the web service, but does not handle usernames and passwords. Instead, it is a web service that redirects the user to the website for login, and then provides a token to the application, allowing it to speak on behalf of the user.
