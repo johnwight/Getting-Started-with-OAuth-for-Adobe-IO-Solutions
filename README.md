@@ -1,7 +1,9 @@
 # Getting-Started-with-OAuth-for-Adobe-IO-Solutions
 Get OAuth Credentials for Adobe I/O Solutions
 
-This document describes the OAuth steps for obtaining credentials on the [Adobe I/O Console](https://console.adobe.io) or by using code to make API calls to Adobe Identity Management System (IMS) endpoints.
+These instructions provide the OAuth steps for obtaining credentials on the [Adobe I/O Console](https://console.adobe.io) or by using code to make API calls to Adobe Identity Management System (IMS) endpoints.
+
+These instructions include the following sections:
 
 Basics of OAuth Authentication
 
@@ -9,21 +11,39 @@ Setting Up the Environment
 
 Obtaining Credentials on the Console
 
-Understanding the OAuth code client-server process
+Understanding the OAuth Code Client-server Process
 
 Using OAuth Code
 
   Signing in
-    IMS URL Endpoint
+  
+    IMS URL Endpoint for Signing in
+    
     Parameters
-    IMS URL Endpoint
+    
+    Authorization Example
+    
+    IMS URL Endpoint for Token Bearing
+    
     Parameters
- Renewing Your Login
-    IMS URL Endpoint
+    
+     Token Bearing Example
+    
+  Renewing Your Login
+  
+    IMS URL Endpoint for Refresh Tokens
+    
     Parameters
+    
+    Refresh Example
+    
  Signing Out
-    IMS URL Endpoint
+ 
+    IMS URL Endpoint for Signing Out
+    
     Parameters
+    
+    Sign Out Example
 
 Basics of OAuth authentication
 OAuth allows end-users to sign in directly to the service they want to use from within the convenience of an intermediate application. The app acts between the user and the web service, but does not handle usernames and passwords. Instead, it is a web service that redirects the user to the website for login, and then provides a token to the application, allowing it to speak on behalf of the user.
