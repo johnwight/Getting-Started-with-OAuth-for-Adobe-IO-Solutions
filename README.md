@@ -75,13 +75,18 @@ To use the Adobe I/O Console:
 1.	Click **New Integration** and then click **Continue**.
 
 1. On the Integration Details screen, provide the following: 
-  1. The Name of your application.. This is not sent in your API requests, but it is good practice to use a web-friendly name suitable for later use in the X-product header.
-  1. A Description of your integration, such as “Integration of Stock API with “MyWebsite.com.”
-3.	The B: Choose iOS, Android, or Web.
-4.	A Default redirect URI: Provide the URL of the page or script (usually at the root of your web app) that Adobe will access during the authentication process. It must be hosted on a secure (HTTPS) server, even if it is only a localhost instance 
+  
+  1. The **Name** of your application. This is not sent in your API requests, but it is good practice to use a web-friendly name suitable for later use in the X-product header.
+  
+  1. A **Description** of your integration, such as *Integration of Stock API with “MyWebsite.com.*
+    
+  1. **Platform**: Choose **iOS**, **Android**, or **Web**.
 
-Note:  If you do not have this address yet, you can use any URL address (e.g., https://mysite.com/redirect.html). You will need to change this later for your application to work, however. 
-5.	A Redirect URI pattern: This is a URI path (or comma-separated list of paths) that Adobe will attempt to redirect when the login flow is complete. It must be within your application domain, and is typically the root. You must escape periods (.) with \\. For example: https://mysite\\.com/.
+  1. A **Default redirect URI**: Provide the URL of the page or script (usually at the root of your web app) that Adobe will access during the authentication process. It must be hosted on a secure (HTTPS) server, even if it is only a localhost instance.
+
+  *Note:  If you do not have this address yet, you can use any URL address (e.g., https://mysite.com/redirect.html). You will need to change this later for your application to work, however.*
+  
+  5.	A Redirect URI pattern: This is a URI path (or comma-separated list of paths) to which Adobe will attempt to redirect when the login flow is complete. It must be within your application domain, and is typically the root. You must escape periods (.) with \\. For example: https://mysite\\.com/.
 
  
 
