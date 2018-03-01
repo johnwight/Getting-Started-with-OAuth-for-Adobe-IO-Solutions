@@ -13,11 +13,9 @@ These instructions include the following sections:
 
 1. [Obtaining Credentials with OAuth Code](#Code)
 
-       [Signing In](#Sign)
-    
-       [Renewing Your Login](#Renew)
-    
-       [Signing Out](#Out)
+      [Signing In](#Sign)
+      [Renewing Your Login](#Renew)
+      [Signing Out](#Out)
  
    
 ## Basics of OAuth Authentication
