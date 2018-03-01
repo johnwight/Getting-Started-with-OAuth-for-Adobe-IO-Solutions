@@ -65,20 +65,18 @@ To use the Adobe I/O Console:
 1.	On the Adobe I/O Console, click **New Integration**.
 
 
-2.	Select **Access an API** and then click **Continue**.
+1.	Select **Access an API** and then click **Continue**.
 
  
 
-3.	Select the Adobe product or service you want to use with Adobe I/O and then click **Continue**.
+1.	Select the Adobe product or service you want to use with Adobe I/O and then click **Continue**.
  
 
-4.	Click New Integration and then click Continue.
+1.	Click **New Integration** and then click **Continue**.
 
-
-
-On the Integration Details screen, provide the following: 
-1.	The Name of your application.. This is not sent in your API requests, but it is good practice to use a web-friendly name suitable for later use in the X-product header.
-2.	A Description of your integration, such as “Integration of Stock API with “MyWebsite.com.”
+1. On the Integration Details screen, provide the following: 
+  1. The Name of your application.. This is not sent in your API requests, but it is good practice to use a web-friendly name suitable for later use in the X-product header.
+  1. A Description of your integration, such as “Integration of Stock API with “MyWebsite.com.”
 3.	The B: Choose iOS, Android, or Web.
 4.	A Default redirect URI: Provide the URL of the page or script (usually at the root of your web app) that Adobe will access during the authentication process. It must be hosted on a secure (HTTPS) server, even if it is only a localhost instance 
 
