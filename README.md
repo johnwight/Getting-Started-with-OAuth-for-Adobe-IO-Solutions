@@ -86,7 +86,7 @@ To use the Adobe I/O Console:
 
   *Note:  If you do not have this address yet, you can use any URL address (e.g., https://mysite.com/redirect.html). You will need to change this later for your application to work, however.*
   
-  5.	A Redirect URI pattern: This is a URI path (or comma-separated list of paths) to which Adobe will attempt to redirect when the login flow is complete. It must be within your application domain, and is typically the root. You must escape periods (.) with \\. For example: https://mysite\\.com/.
+  10.	A Redirect URI pattern: This is a URI path (or comma-separated list of paths) to which Adobe will attempt to redirect when the login flow is complete. It must be within your application domain, and is typically the root. You must escape periods (.) with \\. For example: https://mysite\\.com/.
 
  
 
