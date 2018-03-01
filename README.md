@@ -17,46 +17,55 @@ Using OAuth Code
 
   Signing in
   
-    IMS URL Endpoint for Signing in
+   IMS URL Endpoint for Signing in
     
-    Parameters
+   Parameters
     
-    Authorization Example
+   Authorization Example
     
-    IMS URL Endpoint for Token Bearing
+   IMS URL Endpoint for Token Bearing
     
-    Parameters
+   Parameters
     
-     Token Bearing Example
+   Token Bearing Example
     
   Renewing Your Login
   
-    IMS URL Endpoint for Refresh Tokens
+   IMS URL Endpoint for Refresh Tokens
     
-    Parameters
+   Parameters
     
-    Refresh Example
+   Refresh Example
     
  Signing Out
  
-    IMS URL Endpoint for Signing Out
+   IMS URL Endpoint for Signing Out
     
-    Parameters
+   Parameters
     
-    Sign Out Example
+   Sign Out Example
 
-Basics of OAuth authentication
+## Basics of OAuth authentication
+
 OAuth allows end-users to sign in directly to the service they want to use from within the convenience of an intermediate application. The app acts between the user and the web service, but does not handle usernames and passwords. Instead, it is a web service that redirects the user to the website for login, and then provides a token to the application, allowing it to speak on behalf of the user.
-Setting Up the Environment 
+
+## Setting Up the Environment
+
 To test and integrate with the auth code method, you must create a secure (HTTPS) server. This is required by the auth code method, which redirects traffic from Adobe’s sign in page back to your server, but only if your page is hosted in a secure location. Also, if you prefer not to use front-end Ajax to communicate with the Adobe APIs, you will need server support to handle these requests. 
 
 For basic testing, a simple option is to use Node.js or Python; otherwise, Apache provides a robust set of tools for web hosting. In each case, you will need to generate or purchase a public key certificate to complete the setup. 
-Integrating with Adobe I/O
-To access Adobe APIs, you will need to create an application key on the Adobe I/O Console (https://console.adobe.io). Adobe I/O whitelist these keys and permits your application to access the APIs. It also issues and validates OAuth claims. 
 
-To integrate with Adobe I/O:
-1.	On the Adobe I/O Console, click the New Integration button.
-2.	Select Access an API and then click Continue.
+
+## Obtaining Credentials on the Console
+
+To access Adobe APIs, create an application key on the [Adobe I/O Console](https://console.adobe.io). Adobe I/O whitelists these keys and permits your application to access the APIs. It also issues and validates OAuth claims. 
+
+To use the Adobe I/O Console:
+
+1.	On the Adobe I/O Console, click **New Integration**.
+
+
+2.	Select **Access an API** and then click **Continue**.
 
  
 
