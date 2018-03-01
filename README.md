@@ -13,11 +13,11 @@ These instructions include the following sections:
 
 1. [Obtaining Credentials with OAuth Code](#Code)
 
-        [Signing In](#Sign)
+       [Signing In](#Sign)
     
-        [Renewing Your Login](#Renew)
+       [Renewing Your Login](#Renew)
     
-        [Signing Out](#Out)
+       [Signing Out](#Out)
  
    
 ## Basics of OAuth Authentication
