@@ -61,9 +61,12 @@ To use the Adobe I/O Console:
 
   *Note:  If you do not have this address yet, you can use any URL (e.g., `https://mysite.com/redirect.html`). Later, you will need to change it for your application to work.*
   
-  10.	A **Redirect URI pattern**: This is a URI path (or comma-separated list of paths) to which Adobe will attempt to redirect when the login flow is complete. It must be within your application domain, and is typically the root. You must escape periods (`.`) with `\\`, such as: `https://mysite\\.com/`.
+  10. A **Redirect URI pattern**: This is a URI path (or comma-separated list of paths) to which Adobe will attempt to redirect when the login flow is complete. It must be within your application domain, and is typically the root. You must escape periods (`.`) with `\\`, such as: `https://mysite\\.com/`.
 
- Once the integration is saved, the Adobe I/O Console generates several pieces of information you will need later. Copy everything in the **Client Credentials** section (including the **Client Secret**) and safeguard it like your private key in a secure location. 
+     ![integration details](https://user-images.githubusercontent.com/29133525/36869926-9b3cc0b0-1d5a-11e8-8a47-1ca5326f92d8.png)
+
+
+Once the integration is saved, the Adobe I/O Console generates several pieces of information you will need later. Copy everything in the **Client Credentials** section (including the **Client Secret**) and safeguard it like your private key in a secure location. 
 
 ## <a name="Code">Obtaining Credentials with OAuth Code</a>
 
